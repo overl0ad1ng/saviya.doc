@@ -13,8 +13,8 @@ export const rustSidebar = [
 					{ text: '变量和可变性', link: '/docs/backend/rust/primary/concepts/variables-and-mutable' },
 					{ text: '数据类型', link: '/docs/backend/rust/primary/concepts/data-type' },
 					{ text: '函数', link: '/docs/backend/rust/primary/concepts/functions' },
-					{ text: '控制流', link: '/docs/backend/rust/primary/concepts/control-flow' },
 					{ text: '范围表达式', link: '/docs/backend/rust/primary/concepts/range-expressions' },
+					{ text: '控制流', link: '/docs/backend/rust/primary/concepts/control-flow' },
 				]
 			},
 			{

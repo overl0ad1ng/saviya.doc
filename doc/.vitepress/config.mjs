@@ -3,7 +3,8 @@ import {rustSidebar} from "./sidebars/rust-sidebar";
 import container from 'markdown-it-container'
 import rubyPlugin from "./md/md-it-ruby";
 import mathjax3 from 'markdown-it-mathjax3';
-import { transformerMetaWordHighlight, transformerRenderIndentGuides } from "@shikijs/transformers"; // [!code ++]
+import { transformerMetaWordHighlight, transformerRenderIndentGuides } from "@shikijs/transformers";
+import footnote from 'markdown-it-footnote';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,6 +15,9 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(mathjax3);
+      md.use(footnote);
+      md.use(rubyPlugin);
+
       md.use(container, 'blockquote', {
         render: (tokens, idx) => {
           const m = tokens[idx].info.trim().match(/^blockquote\s*(.*)$/)
@@ -25,7 +29,6 @@ export default defineConfig({
           }
         }
       });
-      md.use(rubyPlugin);
     },
     lineNumbers: true,
     codeTransformers: [
@@ -35,6 +38,10 @@ export default defineConfig({
   },
   
   themeConfig: {
+    footer: {
+      copyright: 'Copyright © 2026 Saviya@overl0ad1ng'
+    },
+
     lastUpdatedText: "",
     
     outline: {
