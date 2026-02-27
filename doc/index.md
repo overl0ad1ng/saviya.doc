@@ -8,7 +8,16 @@ hero:
 
 features:
   - title: Rust
-    details: Rust 是一门强调安全性、性能的语言
     link: /docs/backend/rust/primary/
+    linkText: 立即前往
+  - title: 代码美学：如何写好代码
+    link: /docs/common/beautiful-codes/
+    linkText: 立即前往
+  - title: C++
+    details: 
+    link: /docs/backend/cpp/primary/
+    linkText: 立即前往
+  - title: 日语
+    link: /docs/language/jp/pre/
     linkText: 立即前往
 ---

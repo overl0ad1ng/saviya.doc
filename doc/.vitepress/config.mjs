@@ -5,6 +5,7 @@ import rubyPlugin from "./md/md-it-ruby";
 import mathjax3 from 'markdown-it-mathjax3';
 import { transformerMetaWordHighlight, transformerRenderIndentGuides } from "@shikijs/transformers";
 import footnote from 'markdown-it-footnote';
+import mark from 'markdown-it-mark'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -17,6 +18,10 @@ export default defineConfig({
       md.use(mathjax3);
       md.use(footnote);
       md.use(rubyPlugin);
+      md.use(mark);
+
+      md.renderer.rules.mark_open = () => '<Spoiler>'
+      md.renderer.rules.mark_close = () => '</Spoiler>'
 
       md.use(container, 'blockquote', {
         render: (tokens, idx) => {

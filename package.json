@@ -1,5 +1,5 @@
 {
-  "name": "SaviyaDoc",
+  "name": "saviya-doc",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,6 +24,7 @@
     "markdown-it": "^14.1.1",
     "markdown-it-container": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
     "vue": "^3.5.28"
   }
 }

@@ -18,21 +18,22 @@ export const rustSidebar = [
 				]
 			},
 			{
-				text: '所有权核心',
+				text: '所有权',
+				link: '/docs/backend/rust/primary/ownership/',
 				collapsed: true,
 				items: [
-					{ text: '所有权基础', link: '/docs/backend/rust/primary/ownership/' },
 					{ text: '栈、堆和静态内存', link: '/docs/backend/rust/primary/ownership/stack-heap-and-static-memory' },
+					{ text: '所有权概念', link: '/docs/backend/rust/primary/ownership/ownership-concepts' },
 					{ text: 'Copy vs Move vs Clone', link: '/docs/backend/rust/primary/ownership/copy-move-clone' },
 					{ text: '引用与借用', link: '/docs/backend/rust/primary/ownership/references-and-borrowing' },
-					{ text: '切片类型', link: '/docs/backend/rust/primary/ownership/slice' },
+					{ text: '字符串和切片', link: '/docs/backend/rust/primary/ownership/string-and-slice' },
 				]
 			},
 			{
 				text: '结构体和枚举',
 				collapsed: true,
 				items: [
-					{ text: '结构体与方法', link: '/docs/backend/rust/primary/struct-and-enums/' },
+					{ text: '结构体', link: '/docs/backend/rust/primary/struct-and-enums/' },
 					{ text: 'impl 块', link: '/docs/backend/rust/primary/struct-and-enums/impl' },
 					{
 						text: "枚举与模式匹配",
@@ -59,6 +60,14 @@ export const rustSidebar = [
 					{ text: '模块系统', link: '/docs/backend/rust/senior/project/mod-and-access-modifier' },
 					{ text: '外部依赖管理', link: '/docs/backend/rust/senior/project/cargo-toml' },
 					{ text: 'Rust 代码风格', link: '/docs/backend/rust/senior/project/lints' },
+				]
+			},
+			{
+				text: '函数式编程',
+				collapsed: true,
+				items: [
+					{ text: '闭包', link: '/docs/backend/rust/senior/functional-programming/closure' },
+					{ text: '迭代器', link: '/docs/backend/rust/senior/functional-programming/iterator' },
 				]
 			},
 			{
@@ -91,7 +100,6 @@ export const rustSidebar = [
 							{ text: 'BTreeMap', link: '/docs/backend/rust/senior/collections/sets-collection/b-tree-set' },
 						],
 					},
-					{ text: 'String 与 &str', link: '/docs/backend/rust/senior/collections/string' },
 				]
 			},
 			{

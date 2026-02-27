@@ -20,6 +20,9 @@ const date = computed(() => {
 <template>
   <div class="custom-title-wrapper">
     <h1 class="doc-title">{{ frontmatter.title || page.title }}</h1>
+    <p class="doc-detail" v-if="frontmatter.detail">
+      {{ frontmatter.detail }}
+    </p>
 
     <div v-if="date" class="doc-info">
       <span class="date-icon">🕒</span>
@@ -33,6 +36,10 @@ const date = computed(() => {
 <style scoped>
 .custom-title-wrapper {
   margin-bottom: 2rem;
+}
+
+.doc-detail {
+  color: var(--vp-c-text-2);
 }
 
 .doc-title {

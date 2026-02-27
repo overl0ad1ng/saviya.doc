@@ -172,6 +172,41 @@ fn main() {
 }
 ```
 
+#### 类型的后缀声明
+
+在 Rust 中，我们对于数字类型**字面量**可以使用一个特殊的类型声明语法，那就是后缀声明，这种语法叫做**类型后缀**（Type Suffixes），例如：
+
+```rust
+fn main() {
+  let x = 5.20_f32; // f32
+  let y = 56_u8; // u8
+  let z = 152_i64; // i64
+}
+```
+
+#### NaN
+
+对于数学上未定义的结果，例如对负数取平方根，这是初中时期的常识（不引入虚数的情况下），负数是没有平方根的，无论是 $+2$ 还是 $-2$ 的平方都等于 $+4$，这点毋庸置疑。
+
+但是如果我们在 Rust 中，对 `-4` 取平方根会怎么样？
+
+> [!TIP] 注意
+> 在 Rust 中，取平方根使用 `sqrt` 函数，而且整型是没有 sqrt 函数的，因为一个数的平方根并不一定是整型，例如 $\sqrt{4} = 2$，$\sqrt{2} \approx 1.414$，
+> 所以 Rust 的 `sqrt` 函数是只存在于 `f32` 和 `f64` 上的，同时，因为 `f32` 和 `f64` 的 `sqrt` 函数有不同的实现，所以在使用时，我们必须明确声明需要被运算的值的类型是
+> `f32` 还是 `f64`
+
+```rust
+fn main() {
+  let num: f32 = -4.0;
+  // 或者 let num = -4.0_f32;
+  let result = num.sqrt();
+
+ println!("{}", result);
+}
+```
+
+运行这段代码，最后会输出 `NaN`，它的含义是 `Not a Number`
+
 ### 布尔类型
 
 布尔类型用于表示真或假，Rust 中布尔类型有两个值：`true` 和 `false`
@@ -207,6 +242,17 @@ fn main() {
 ```
 
 注意，字符型的字面量声明需要使用单引号 `'` 来声明，Rust 中的 `char` 大小为 4 个字节 (bytes)。在 Rust 中，带[变音符号的字母]{rt:"Accented letters"}，中文、日文、韩文等字符，emoji（绘文字）以及零长度的空白字符都是有效的 `char` 值。
+
+### 使用 as 进行类型转换
+
+在 Rust 中，可以使用 `as` 关键字进行强制类型转换，它被称作**原生强制转换**（Primitive Casting），它可以用于很多地方的类型转换。
+
+和其他很多语言不同，Rust 不允许你对类型隐式转换，例如你不能把 `u8` 赋值给 `u32`，即使 `u32` 的容量比 `u8` 大。于是我们就可以使用 `as` 关键字进行显式强制转换，
+在数值类型中转换类型，我们可以分为三种转换：
+
+1. 无损转换：从小到大，例如 `u8` 到 `u32`
+2. 有损转换：从大到小，例如 `u32` 到 `u8`，溢出部分会被丢弃
+3. 浮点数到整型：丢弃小数部分
 
 ## 复合类型
 
@@ -342,24 +388,24 @@ error: could not compile `data_type` (bin "data_type") due to 1 previous error
 use std::io;
 
 fn main() {
-	let a = [1, 2, 3, 4, 5];
+  let a = [1, 2, 3, 4, 5];
 	
-	println!("Please enter an array index:");
+  println!("Please enter an array index:");
 	
-	let mut index = String::new();
+  let mut index = String::new();
 	
-	io::stdin()
-		.read_line(&mut index)
-		.expect("failed to read line");
+  io::stdin()
+	.read_line(&mut index)
+	.expect("failed to read line");
 	
-	let index: u32 = index
-		.trim()
-		.parse()
-		.expect("index entered was not a number");
+  let index: u32 = index
+	.trim()
+	.parse()
+	.expect("index entered was not a number");
 	
-	let element = a[index];
+  let element = a[index];
 	
-	println!("The value of the element at index {index} is: {element}");
+  println!("The value of the element at index {index} is: {element}");
 }
 ```
 

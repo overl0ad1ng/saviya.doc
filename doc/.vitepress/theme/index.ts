@@ -4,6 +4,8 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import DocTitle from './DocTitle.vue'
 import './style.css'
+import ImageCard from "./components/ImageCard.vue";
+import Spoiler from "./components/Spoiler.vue";
 
 export default {
   extends: DefaultTheme,
@@ -12,5 +14,8 @@ export default {
       'doc-before': () => h(DocTitle)
     })
   },
-  enhanceApp() { }
+  enhanceApp({ app }) {
+    app.component("ImageCard", ImageCard);
+    app.component('Spoiler', Spoiler)
+  }
 } satisfies Theme
