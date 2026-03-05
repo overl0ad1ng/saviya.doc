@@ -14,12 +14,12 @@ title: 控制流
 不过，通过控制流，可以运行指定的一段代码，或循环某段代码，在 Rust 中，有这几种控制流：
 
 1. 条件控制流：
-   1. `if`
-   2. `let if`
+    1. `if`
+    2. `let if`
 2. 循环控制流：
-   1. `for in`
-   2. `while`
-   3. `loop`
+    1. `for in`
+    2. `while`
+    3. `loop`
 
 ## 条件控制流
 
@@ -54,7 +54,8 @@ num 等于 15
 ```
 
 :::details `condition` 必须是一个布尔类型！
-我们需要注意的是，Rust 在编写 if 分支的时候，判断的条件（condition），必须是一个 `bool` 值 (或一个返回 bool 值的表达式)，例如下面这段代码，是不行的：
+我们需要注意的是，Rust 在编写 if 分支的时候，判断的条件（condition），必须是一个 `bool` 值 (或一个返回 bool 值的表达式)
+，例如下面这段代码，是不行的：
 
 ```rust
 fn main() {
@@ -94,12 +95,13 @@ fn main() {
   }
 }
 ```
+
 :::
 
 > [!TIP] 不要大量的使用 if-else！
 > 在真实的开发环境中，不要大量的依赖 `if else` 进行条件判断，以及不要过多的进行 `if` 嵌套，这会导致代码变得非常难读。
-> 
->[《代码美学：如何写好代码》立即阅读 ->](/docs/common/beautiful-codes/)
+>
+>[《代码美学：如何写好代码》立即阅读 ->](/docs/essay/beautiful-codes/)
 
 ### `let if` 表达式
 
@@ -114,7 +116,9 @@ fn main() {
 }
 ```
 
-除了 `let if`，其实我们还有一个 `if let`，不过我们放在[《结构体和枚举——枚举与模式匹配——Option和Result》](/docs/backend/rust/primary/struct-and-enums/enums/option-and-result.html)中进行讲解。
+除了 `let if`，其实我们还有一个 `if let`
+，不过我们放在[《结构体和枚举——枚举与模式匹配——Option和Result》](/docs/backend/rust/primary/struct-and-enums/enums/option-and-result.html)
+中进行讲解。
 
 ## 循环控制流
 
@@ -175,10 +179,12 @@ fn main() {
 ```
 
 > [!TIP] 迭代器
-> 在很多语言当中，循环的对象通常被称之为一个序列，不过它们还有一个更正式的称呼 —— 迭代器（Iterator），在 Rust 中，循环的对象必须是一个迭代器。
-> 可迭代对象可以通过调用 `next` 函数获取当前位置的下一个元素，在 Rust 中，next 的返回值是 `Option<Item>`，它要么是 `Some(item)`，要么是 `None`。
+> 在很多语言当中，循环的对象通常被称之为一个序列，不过它们还有一个更正式的称呼 —— 迭代器（Iterator），在 Rust
+> 中，循环的对象必须是一个迭代器。
+> 可迭代对象可以通过调用 `next` 函数获取当前位置的下一个元素，在 Rust 中，next 的返回值是 `Option<Item>`，它要么是
+`Some(item)`，要么是 `None`。
 > 例如 `array` 和 `range`，它们都实现了 `IntoIterator trait`，所以，它们可以被 `for` 循环。
-> 
+>
 > 详见：[《集合与内存分布——迭代器》](/docs/backend/rust/senior/functional-programming/iterator)
 
 #### `continue` 和 `break`
@@ -275,4 +281,5 @@ fn main() {
 
 ---
 
-虽然 `loop` 和 `while true` 都可以执行死循环，不过，`loop` 和 `while true` 在本质上还是有区别的，无论是语义、编译器优化、返回值特性等等各个方面，总而言之，在面对需要处理死循环的情况下，`loop` 是更好的选择。
+虽然 `loop` 和 `while true` 都可以执行死循环，不过，`loop` 和 `while true`
+在本质上还是有区别的，无论是语义、编译器优化、返回值特性等等各个方面，总而言之，在面对需要处理死循环的情况下，`loop` 是更好的选择。

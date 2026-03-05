@@ -65,6 +65,12 @@ const myDocs = [
         title: "你真的弄懂二进制了吗？",
         desc: "一篇文档带你从头到尾了解二进制，以及二进制的实际用途",
         link: "/docs/essay/binary/"
+      },
+      {
+        icon: '🌸',
+        title: "如何写好代码",
+        desc: "写代码容易，写好代码难，只有写好代码，才能做到一码传三代",
+        link: "/docs/essay/beautiful-codes/"
       }
     ]
   }
@@ -167,7 +173,6 @@ const myDocs = [
 
 .card:hover {
   border-color: var(--vp-c-brand);
-  background-color: var(--vp-c-bg-soft-up);
 }
 
 .card .icon-wrapper {
