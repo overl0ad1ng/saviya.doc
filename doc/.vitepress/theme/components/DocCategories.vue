@@ -84,7 +84,7 @@ const myDocs = [
       <h2 class="category-title">{{ cat.title }}</h2>
 
       <div class="card-grid">
-        <a v-for="(item, i) in cat.items" :key="i" :href="item.link" class="card">
+        <a v-for="(item, i) in cat.items" :key="i" :href="`/saviya${item.link}`" class="card">
           <div class="card__header">
             <div class="icon-wrapper" v-if="item.icon">
               <div class="icon" v-html="item.icon"></div>
