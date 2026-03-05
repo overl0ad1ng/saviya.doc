@@ -22,13 +22,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm' # 如果你用 pnpm 或 yarn，请对应修改
+          cache: 'npm' # 如果你用 pnpm 或 yarn，请对应修改
 
       - name: Install dependencies
-        run: pnpm install # 如果是 pnpm，请改为 pnpm install
+        run: npm install # 如果是 pnpm，请改为 pnpm install
 
       - name: Build with VitePress
-        run: pnpm run docs:build # 确保你的 package.json 里有这个命令
+        run: npm run docs:build # 确保你的 package.json 里有这个命令
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
